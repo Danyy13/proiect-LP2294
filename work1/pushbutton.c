@@ -3,11 +3,11 @@
 
 void setPinAsGPIO(uint8_t pin) {
 	if (pin & 0xF0) { // verificare daca pin >= 16
-		PINSEL1 &= ~(0b11 << ((pin - 16) / 2));
+		PINSEL1 &= ~(0b11 << ((pin - 16) * 2));
 		//PINSEL1 = 0x00000000; // seteaza toti pinii P0.X (X de la 16 la 31) sa fie GPIO
 	}
 	else {
-		PINSEL0 = ~(0b11 << (pin / 2));
+		PINSEL0 &= ~(0b11 << (pin * 2));
 		//PINSEL0 = 0X00000000; // seteaza toti pinii P0.X (X de la 0 la 15) sa fie GPIO
 	}
 }
