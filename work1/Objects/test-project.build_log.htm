@@ -21,20 +21,46 @@ Target DLL:      Segger\JLTAgdi.dll V1.61.0.0
 Dialog DLL:      TARMP.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\dspproject\Documents\proiect lpc2294\work1\test-project.uvproj
-Project File Date:  07/16/2024
+C:\Users\dspproject\Documents\proiect-LP2294\work1\test-project.uvproj
+Project File Date:  11/01/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target 1'
+Rebuild target 'Target 1'
 compiling main.c...
-main.c(16): warning:  #111-D: statement is unreachable
+main.c(40): warning:  #111-D: statement is unreachable
   	return 0;
 main.c: 1 warning, 0 errors
+compiling blink.c...
+blink.c(69): warning:  #111-D: statement is unreachable
+  	return 0;
+blink.c: 1 warning, 0 errors
+assembling Startup.s...
+compiling pushbutton.c...
+pushbutton.c(67): warning:  #111-D: statement is unreachable
+  	return 0;
+pushbutton.c: 1 warning, 0 errors
 linking...
-Program Size: Code=868 RO-data=16 RW-data=0 ZI-data=1256  
-".\Objects\test-project.axf" - 0 Error(s), 1 Warning(s).
-Build Time Elapsed:  00:00:00
+.\Objects\test-project.axf: Error: L6200E: Symbol __ARM_use_no_argv multiply defined (by blink.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol __ARM_use_no_argv multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol Button_init multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol Button_pressed multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_init multiply defined (by blink.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_init multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_off multiply defined (by blink.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_off multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_on multiply defined (by blink.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_on multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol main multiply defined (by blink.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol main multiply defined (by pushbutton.o and main.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol LED_blink multiply defined (by pushbutton.o and blink.o).
+.\Objects\test-project.axf: Error: L6200E: Symbol setPinAsGPIO multiply defined (by pushbutton.o and blink.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 14 error messages.
+".\Objects\test-project.axf" - 14 Error(s), 3 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
