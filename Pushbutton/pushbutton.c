@@ -51,60 +51,54 @@ void LED_buttonBlink(uint8_t ledPin, uint8_t buttonPin) {
 	}
 }
 
-#define LEDS 2
-#define NR_BUTTON 2
-
-void initArr(uint8_t startPin, uint8_t endPin)
-{
-	for(uint8_t i = startPin; i <= endPin; i++)
-	{
+void initArr(uint8_t startPin, uint8_t endPin) {
+	for(uint8_t i = startPin; i <= endPin; i++) {
 		LED_init(i);
-		LED_on(i);
 	}
 }
 
+#define LEDS 8
+
 int main(void)
 {
-	uint8_t ledPin = 1;
-	 uint8_t buttonPin = 2;
+	//uint8_t ledPin = 1;
+	//uint8_t buttonPin = 2;
 	
-	 LED_init(ledPin);
-	 Button_init(buttonPin);
+	//LED_init(ledPin);
+	//Button_init(buttonPin);
 	
-	//uint8_t startLed = 2, endLed = 3, cursor = 0;
-	//uint8_t upButton = 0;
-	//uint8_t downButton = 1;
-	//initArr(startLed, endLed);
-	//Button_init(upButton);
-	//Button_init(downButton);
+	uint8_t startLed = 2, endLed = startLed + LEDS - 1, cursor = 0;
+	uint8_t upButton = 0;
+	uint8_t downButton = 1;
+
+	initArr(startLed, endLed);
+	Button_init(upButton);
+	Button_init(downButton);
 	
-	
-	// PINSEL0 = PINSEL1 = 0X00000000;
-	uint32_t a = IO0SET;
+	//PINSEL0 = PINSEL1 = 0X00000000;
 	
 	while(1) {
-		// LED_blink(ledPin);
-		 LED_buttonBlink(ledPin, buttonPin);
-		
-		//if(Button_pressed(upButton)) {
-		//for(int i = 0; i < 1000; i++); // delay
-		//	if(Button_pressed(upButton)) {
-		//	cursor ++;
-		//} 
-	//}
-	//	LED_off(NR_BUTTON + cursor - 1);
-	//	LED_on(NR_BUTTON + cursor);
-	/*if(Button_pressed(downButton)) {
-		for(int i = 0; i < 1000; i++); // delay
-		if(Button_pressed(downButton)) {
-			LED_off(NR_BUTTON + cursor --);
-			LED_on(NR_BUTTON + cursor);
-		} 
-	}*/
+		//LED_blink(ledPin);
+		//LED_buttonBlink(ledPin, buttonPin);
+
+		if(Button_pressed(upButton)) {
+			for(volatile int i = 0; i < 10000; i++); // delay
+			if(Button_pressed(upButton)) {
+				LED_off(startLed + cursor);
+				//cursor++;
+				cursor = (cursor + 1) % LEDS;
+			} 
+		}
 	
-	//cursor %=LEDS;
+		if(Button_pressed(downButton)) {
+			for(volatile int i = 0; i < 10000; i++); // delay
+			if(Button_pressed(downButton)) {
+				LED_off(startLed + cursor);
+				if (cursor == 0) cursor = LEDS - 1;
+				else cursor--;
+			}
+		}
 		
-		
-		
+		LED_on(startLed + cursor);
 	}
 }
