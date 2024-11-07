@@ -12,7 +12,7 @@ void setPinAsGPIO(uint8_t pin) {
 }
 
 void LED_init(uint8_t pin) {
-	setPinAsGPIO(pin); // seteaza pinul sa aiba functie de GPIO
+	//setPinAsGPIO(pin); // seteaza pinul sa aiba functie de GPIO
 	IO0DIR |= (1u << pin); // setez pinul P0.[pin] sa fie output
 }
 
@@ -32,7 +32,7 @@ void LED_blink(uint8_t pin) {
 }
 
 void Button_init(uint8_t pin) {
-	setPinAsGPIO(pin);
+	//setPinAsGPIO(pin);
 	IO0DIR &= ~(1u << pin);
 }
 
@@ -57,7 +57,7 @@ void initArr(uint8_t startPin, uint8_t endPin) {
 	}
 }
 
-#define LEDS 8
+#define LEDS 2
 
 int main(void)
 {
@@ -67,16 +67,17 @@ int main(void)
 	//LED_init(ledPin);
 	//Button_init(buttonPin);
 	
-	uint8_t startLed = 2, endLed = startLed + LEDS - 1, cursor = 0;
+	uint8_t startLed = 7, endLed = startLed + LEDS - 1;
+	uint8_t cursor = 0;
 	uint8_t upButton = 0;
-	uint8_t downButton = 1;
+	uint8_t downButton = 2;
 
 	initArr(startLed, endLed);
 	Button_init(upButton);
 	Button_init(downButton);
 	
-	//PINSEL0 = PINSEL1 = 0X00000000;
-	
+	PINSEL0 = PINSEL1 = 0X00000000;
+	LED_on(startLed + cursor);
 	while(1) {
 		//LED_blink(ledPin);
 		//LED_buttonBlink(ledPin, buttonPin);
@@ -87,7 +88,9 @@ int main(void)
 				LED_off(startLed + cursor);
 				//cursor++;
 				cursor = (cursor + 1) % LEDS;
-			} 
+				LED_on(startLed + cursor);
+			}
+			for (int i = 0;i < 1000000;i++); // delay
 		}
 	
 		if(Button_pressed(downButton)) {
@@ -96,9 +99,11 @@ int main(void)
 				LED_off(startLed + cursor);
 				if (cursor == 0) cursor = LEDS - 1;
 				else cursor--;
+				LED_on(startLed + cursor);
 			}
+			for (int i = 0;i < 1000000;i++); // delay
 		}
 		
-		LED_on(startLed + cursor);
+		
 	}
 }
