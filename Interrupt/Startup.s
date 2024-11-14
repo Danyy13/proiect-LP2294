@@ -260,7 +260,7 @@ SWI_Handler     B       SWI_Handler
 PAbt_Handler    B       PAbt_Handler
 DAbt_Handler    B       DAbt_Handler
 IRQ_Handler     B       IRQ_Handler
-		IMPORT Timer0ISR
+			IMPORT Timer0ISR
 FIQ_Handler     B       Timer0ISR
 
 

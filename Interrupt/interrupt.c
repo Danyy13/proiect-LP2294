@@ -1,7 +1,19 @@
 #include<lpc22xx.h>
 #include<stdint.h>
+#include "timer.h"
 
-#define HALF_SECOND 0x0007A120
+#define PIN 5
+
+uint8_t isLedOn;
+
+uint8_t flag = 0;
+
+
+void myirq(void) __irq
+{
+	T0IR |= 1;
+}
+
 
 void setPinAsGPIO(uint8_t pin) {
 	if (pin & 0xF0) { // verificare daca pin >= 16
@@ -26,24 +38,13 @@ void LED_off(uint8_t pin) {
 	IO0CLR |= (1u << pin); // dau semnal de LOW
 }
 
-void initialiseTimer()
+
+void Timer0ISR() __irq
 {
-		T0TCR = 0x1;
-		T0TC = 0x0;
-    T0PR = 0xF; // 1 us
-		T0PC = 0x0;
-    
-		T0MR0 = HALF_SECOND; // 0.5 s
-    T0MCR = 0x3; // Interrupt and Reset on MR0
-}
 
-#define PIN 0
-
-uint8_t isLedOn;
-
-void Timer0ISR(void)  __irq
-{
+	
 		// blink LED
+	
 		if(isLedOn) {
 			LED_off(PIN);
 			isLedOn = 0;
@@ -51,15 +52,9 @@ void Timer0ISR(void)  __irq
 			LED_on(PIN);
 			isLedOn = 1;
 		}
-		
-		// restart interrupt
-		T0IR = 0x01;
+			T0IR = 0x01;
 }
 
-void initialiseVector() {
-	VICIntEnable = 1u << 4; // Timer 0 Channel
-	VICIntSelect = 1u << 4; // Selectam sa fie FIQ
-}
 
 int main(void)
 {
@@ -74,6 +69,10 @@ int main(void)
 
 		T0TCR = 0x1;
     while(1) {
-
+			//if(flag) {
+			//	LED_off(led);
+			//} else {
+			//	LED_on(led);
+			//}
     }
 }
