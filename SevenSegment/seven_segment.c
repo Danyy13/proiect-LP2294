@@ -20,10 +20,10 @@ int main() {
 		}
 		
 		// UART
-		
 		// set BAUD rate
 		// P0.0 = TXD0
 		// P0.1 = RXD0
+		
 	}
 }
 
