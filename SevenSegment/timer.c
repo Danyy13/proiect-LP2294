@@ -3,7 +3,7 @@
 
 #define HALF_SECOND 0x0007A120
 
-void initialiseTimer()
+void initialiseTimer(void)
 {
 		T0TCR = 0x1;
 		T0TC = 0x0;
@@ -14,7 +14,7 @@ void initialiseTimer()
     T0MCR = 0x3; // Interrupt and Reset on MR0
 }
 
-void initialiseVector() {
+void initialiseVector(void) {
 	VICIntEnable = 1u << 4; // Timer 0 Channel
 	VICIntSelect = 1u << 4; // Selectam sa fie FIQ
 }

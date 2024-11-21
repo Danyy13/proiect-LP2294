@@ -1,15 +1,15 @@
 Dependencies for Project 'sevenSegment', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x559D2110)(--cpu ARM7TDMI -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 527"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
-F (.\seven_segment.c)(0x6735ECC8)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\seven_segment.o --omf_browse .\objects\seven_segment.crf --depend .\objects\seven_segment.d)
+F (.\seven_segment.c)(0x673EF32B)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\seven_segment.o --omf_browse .\objects\seven_segment.crf --depend .\objects\seven_segment.d)
 I (C:\Keil_v5\ARM\INC\Philips\lpc22xx.h)(0x559D2158)
-I (sevenSegment.h)(0x6735BFF3)
+I (sevenSegment.h)(0x673EF275)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F137E)
-I (timer.h)(0x6735BFE6)
-F (.\sevenSegment.c)(0x6735BFEE)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\sevensegment.o --omf_browse .\objects\sevensegment.crf --depend .\objects\sevensegment.d)
+I (timer.h)(0x673EEEFC)
+F (.\sevenSegment.c)(0x673EF26E)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\sevensegment.o --omf_browse .\objects\sevensegment.crf --depend .\objects\sevensegment.d)
 I (C:\Keil_v5\ARM\INC\Philips\lpc22xx.h)(0x559D2158)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F137E)
-F (.\sevenSegment.h)(0x6735BFF3)()
-F (.\timer.c)(0x6735BF90)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+F (.\sevenSegment.h)(0x673EF275)()
+F (.\timer.c)(0x673EEEE3)(--c99 --gnu -c --cpu ARM7TDMI -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="527"-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (C:\Keil_v5\ARM\INC\Philips\lpc22xx.h)(0x559D2158)
-I (timer.h)(0x6735BFE6)
-F (.\timer.h)(0x6735BFE6)()
+I (timer.h)(0x673EEEFC)
+F (.\timer.h)(0x673EEEFC)()

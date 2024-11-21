@@ -3,7 +3,7 @@
 #ifndef SEVEN_SEGMENT_H_
 #define SEVEN_SEGMENT_H_
 
-static const uint8_t digitMap[10] = {
+static const uint32_t digitMap[10] = {
 	0b11000000,
 	0b11111001,
 	0b10100100,
@@ -16,8 +16,8 @@ static const uint8_t digitMap[10] = {
 	0b10010000
 };
 
-void initDigit();
-void displayDigit(uint8_t);
-void clearDigit();
+void initDigit(void);
+void displayDigit(uint32_t);
+void clearDigit(void);
 
 #endif /* SEVEN_SEGMENT_H_ */

@@ -11,17 +11,20 @@ int main() {
 	initDigit();
 	
 	while(1) {
+		// seven segment
 		for(int i=0;i<10;i++) {
 			// display digit
 			displayDigit(digitMap[i]);
+			for(int j=0;j<1000000;j++) {}
 			clearDigit();
-			
-			//delay
-			for(int j=0;j<100000;j++) {}
 		}
+		
+		// UART
+		
+		// set BAUD rate
+		// P0.0 = TXD0
+		// P0.1 = RXD0
 	}
 }
 
-// set BAUD rate
-// P0.0 = TXD0
-// P0.1 = RXD0
+

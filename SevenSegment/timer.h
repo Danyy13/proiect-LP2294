@@ -1,7 +1,7 @@
 #ifndef TIMER_H_
 #define TIMER_H_
 
-void initialiseTimer();
-void initialiseVector();
+void initialiseTimer(void);
+void initialiseVector(void);
 
 #endif /* TIMER_H_ */
