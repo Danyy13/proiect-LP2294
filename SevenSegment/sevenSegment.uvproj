@@ -47,7 +47,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>Interrupt</OutputName>
+          <OutputName>sevenSegment</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -125,7 +125,7 @@
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
           <Simulator>
-            <UseSimulator>0</UseSimulator>
+            <UseSimulator>1</UseSimulator>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -137,7 +137,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
-            <UseTarget>1</UseTarget>
+            <UseTarget>0</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -149,7 +149,7 @@
             <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>18</TargetSelection>
+          <TargetSelection>0</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -163,7 +163,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>Segger\JLTAgdi.dll</Driver>
+            <Driver>BIN\UL2ARM.DLL</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -173,11 +173,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>-1</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2ARM.DLL</Flash2>
-          <Flash3>"LPC210x_ISP.EXE" ("#H" ^X $D COM1: 9600 1)</Flash3>
+          <Flash3>LPC210x_ISP.EXE ("#H" ^X $D COM1: 9600 1)</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -408,7 +408,7 @@
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x40000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>.\Objects\Interrupt.sct</ScatterFile>
+            <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -427,9 +427,19 @@
               <FilePath>.\Startup.s</FilePath>
             </File>
             <File>
-              <FileName>interrupt.c</FileName>
+              <FileName>seven_segment.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\interrupt.c</FilePath>
+              <FilePath>.\seven_segment.c</FilePath>
+            </File>
+            <File>
+              <FileName>sevenSegment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\sevenSegment.c</FilePath>
+            </File>
+            <File>
+              <FileName>sevenSegment.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\sevenSegment.h</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
