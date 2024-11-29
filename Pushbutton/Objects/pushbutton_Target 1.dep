@@ -1,6 +1,0 @@
-Dependencies for Project 'pushbutton', Target 'Target 1': (DO NOT MODIFY !)
-CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (.\Startup.s)(0x672C7857)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 529"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
-F (.\pushbutton.c)(0x672C8A5D)(--c99 --gnu -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork --split_sections-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips-D__UVISION_VERSION="529"-o .\objects\pushbutton.o --omf_browse .\objects\pushbutton.crf --depend .\objects\pushbutton.d)
-I (C:\Keil_v5\ARM\INC\Philips\lpc22xx.h)(0x559D2158)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B1868)
